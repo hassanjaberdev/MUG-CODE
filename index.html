@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MUG CODE</title>
+    <link rel="icon" type="image/svg" href="images/logo-icon.svg" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body class="rtl">
+    <!-- Project Request Modal -->
+<div class="modal fade" id="projectModal" tabindex="-1">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content project-modal">
+
+      <!-- Header -->
+      <div class="modal-header border-0">
+        <h5 class="modal-title" data-translate="modal_title">
+          طلب تنفيذ مشروع
+        </h5>
+
+        <button type="button" class="modal-close-btn" data-bs-dismiss="modal">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </button>
+
+      </div>
+
+      <!-- Body -->
+      <div class="modal-body">
+        <p class="mb-3 text-muted" data-translate="modal_subtitle">
+          املأ البيانات التالية لنبدأ في تنفيذ مشروعك
+        </p>
+
+        <form id="projectForm">
+
+          <!-- Full Name -->
+          <input 
+            type="text" 
+            class="form-control" 
+            placeholder="الاسم الكامل"
+            data-translate-placeholder="modal_fullname"
+            required
+          />
+
+          <!-- Email -->
+          <input 
+            type="email" 
+            class="form-control" 
+            placeholder="البريد الإلكتروني"
+            data-translate-placeholder="modal_email"
+            required
+          />
+
+          <!-- Phone -->
+          <input 
+            type="tel" 
+            class="form-control" 
+            placeholder="رقم الهاتف"
+            data-translate-placeholder="modal_phone"
+          />
+
+          <!-- Project Type -->
+          <select 
+            class="form-control"
+            data-translate-placeholder="modal_project_type"
+            required
+          >
+            <option value="" selected disabled data-translate="option_choose">
+              اختر نوع المشروع
+            </option>
+            <option data-translate="option_web">موقع ويب</option>
+            <option data-translate="option_store">متجر إلكتروني</option>
+            <option data-translate="option_app">تطبيق جوال</option>
+            <option data-translate="option_uiux">تصميم UI/UX</option>
+            <option data-translate="option_marketing">تسويق رقمي</option>
+            <option data-translate="option_branding">تصميم هوية</option>
+            <option data-translate="option_other">أخرى</option>
+          </select>
+
+          <!-- Budget -->
+          <select 
+            class="form-control"
+            data-translate-placeholder="modal_budget"
+          >
+            <option value="" selected disabled data-translate="option_budget">
+              الميزانية المتوقعة
+            </option>
+            <option data-translate="budget_1">أقل من 300$</option>
+            <option data-translate="budget_2">300$ - 800$</option>
+            <option data-translate="budget_3">800$ - 1500$</option>
+            <option data-translate="budget_4">1500$ - 3000$</option>
+            <option data-translate="budget_5">أكثر من ذلك</option>
+          </select>
+
+          <!-- Deadline -->
+          <select 
+            class="form-control"
+            data-translate-placeholder="modal_deadline"
+          >
+            <option value="" selected disabled data-translate="option_deadline">
+              مدة التسليم المتوقعة
+            </option>
+            <option data-translate="deadline_1">أسبوع</option>
+            <option data-translate="deadline_2">أسبوعين</option>
+            <option data-translate="deadline_3">شهر</option>
+            <option data-translate="deadline_4">غير محدد</option>
+          </select>
+
+          <!-- Project Description -->
+          <textarea 
+            rows="5" 
+            class="form-control"
+            placeholder="اكتب تفاصيل المشروع"
+            data-translate-placeholder="modal_message"
+            required
+          ></textarea>
+
+          <!-- Submit -->
+          <button 
+            type="submit" 
+            class="btn btn-primary w-100 mt-2"
+            data-translate="modal_send"
+          >
+            إرسال الطلب
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <!-- Quick action buttons -->
+    <a
+      href="https://wa.me/972592677218"
+      id="whatsappBtn"
+      target="_blank"
+      aria-label="WhatsApp"
+      class="whatsapp-floating"
+    >
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <a href="tel:+972592677218" id="callBtn" class="call-btn" aria-label="Call">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+
+    <!-- Aurora Background -->
+    <div class="aurora-bg">
+      <div class="aurora"></div>
+    </div>
+
+    <!-- Content Wrapper -->
+    <div class="content-wrapper">
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <a class="navbar-brand d-flex align-items-center gap-2" href="#home">
+            <div class="d-flex flex-column">
+              <div><span>Mug</span> <span>Code</span></div>
+              <small class="align-self-end">Innovative Solutions</small>
+            </div>
+            <img src="images/logo-icon.svg" alt="logo" width="50" />
+          </a>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  data-translate="nav_home"
+                  href="#home"
+                  >الرئيسية</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-translate="nav_about" href="#about"
+                  >من نحن</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  data-translate="nav_services"
+                  href="#services"
+                  >خدماتنا</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  data-translate="nav_portfolio"
+                  href="#portfolio"
+                  >أعمالنا</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-translate="nav_blog" href="#blog"
+                  >المدونة</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-translate="nav_contact" href="#contact"
+                  >اتصل بنا</a
+                >
+              </li>
+            </ul>
+
+            <div class="navbar-controls">
+              <div
+                class="control-btn"
+                id="languageBtn"
+                title="تغيير اللغة"
+                aria-label="Change language"
+              >
+                <i class="fas fa-globe"></i>
+              </div>
+
+              <div
+                class="control-btn"
+                id="themeBtn"
+                title="تغيير الوضع"
+                aria-label="Toggle theme"
+              >
+                <i class="fas fa-moon"></i>
+              </div>
+
+              <a
+                href="#"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#projectModal"
+                data-translate="btn_order"
+              >
+                اطلب مشروعك
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero Section -->
+      <section class="hero-section" id="home">
+        <div class="container">
+          <div class="mascot">
+            <img
+              src="images/v1-unscreen.gif"
+              alt="Mascot"
+              class="img-fluid"
+              id="mascotImg"
+            />
+          </div>
+
+          <h1 data-translate="hero_title">
+            نمنح علامتك التجارية افقا جديد للنمو والتميز
+          </h1>
+
+          <p data-translate="hero_desc">
+            نُبدع لنرتقي بمشروعك خطوة بخطوة، نصنع حلولًا رقمية تلائمك وتبرز
+            هويتك بوضوح.
+          </p>
+
+          <div class="hero-btn">
+            <a
+              href="https://wa.me/972592677218"
+              target="_blank"
+              class="btn btn-whatsapp btn-lg"
+              id="heroWhats"
+            >
+              <i class="fab fa-whatsapp"></i>
+              <span data-translate="btn_whatsapp">واتساب</span>
+            </a>
+
+            <a
+              href="#"
+              class="btn btn-primary btn-lg"
+              data-bs-toggle="modal"
+              data-bs-target="#projectModal"
+              data-translate="btn_start"
+            >
+              ابدأ الان
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Section -->
+      <section class="stats-section">
+        <div class="container">
+          <div class="row g-4">
+            <div class="col-md-3 col-sm-6">
+              <div class="stat-card">
+                <i class="fas fa-users"></i>
+                <h3 class="stat-number" data-anim-start="0" data-anim-end="500">
+                  500+
+                </h3>
+                <p data-translate="stat_happy">عميل سعيد</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="stat-card">
+                <i class="fas fa-project-diagram"></i>
+                <h3 class="stat-number" data-anim-start="0" data-anim-end="300">
+                  300+
+                </h3>
+                <p data-translate="stat_projects">مشروع مكتمل</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="stat-card">
+                <i class="fas fa-award"></i>
+                <h3 class="stat-number" data-anim-start="0" data-anim-end="50">
+                  50+
+                </h3>
+                <p data-translate="stat_awards">جائزة</p>
+              </div>
+            </div>
+
+            <div class="col-md-3 col-sm-6">
+              <div class="stat-card">
+                <i class="fas fa-clock"></i>
+                <h3 class="stat-number" data-anim-start="0" data-anim-end="10">
+                  10+
+                </h3>
+                <p data-translate="stat_years">سنوات خبرة</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section class="about-section" id="about">
+        <div class="container">
+          <div class="section-title">
+            <div class="star-img"></div>
+            <span data-translate="about_title">نبذة عنا</span>
+          </div>
+
+          <p class="section-subtitle" data-translate="about_sub">
+            نحن فريق من المبدعين والمطورين المتخصصين في تقديم حلول برمجية مبتكرة
+          </p>
+
+          <div class="row align-items-center">
+            <div class="col-lg-6 text-end about-txt">
+              <h3 class="mb-4" data-translate="about_heading">
+                نبني المستقبل معاً
+              </h3>
+              <p class="mb-3" data-translate="about_p1">
+                نحن شركة رائدة في مجال تطوير البرمجيات، نقدم حلولاً مبتكرة تساعد
+                الشركات على النمو والتطور في العصر الرقمي.
+              </p>
+              <p data-translate="about_p2">
+                فريقنا المتخصص يعمل بشغف لتحويل أفكارك إلى واقع ملموس باستخدام
+                أحدث التقنيات والأدوات.
+              </p>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+              <img
+                src="images/character03.png"
+                alt="Team"
+                class="about-image"
+                data-translate-alt="about_img_alt"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section class="services-section" id="services">
+        <div class="container">
+          <div class="section-title">
+            <div class="star-img"></div>
+            <span data-translate="services_title">خدماتنا</span>
+          </div>
+
+          <p class="section-subtitle text-center" data-translate="services_sub">
+            نقدم مجموعة شاملة من الخدمات التقنية
+          </p>
+
+          <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+              <div class="service-card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3 data-translate="service_mobile">تطوير تطبيقات الجوال</h3>
+                <p data-translate="service_mobile_p">
+                  نصمم ونطور تطبيقات جوال احترافية لأنظمة iOS و Android بأحدث
+                  التقنيات.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="service-card">
+                <i class="fas fa-globe"></i>
+                <h3 data-translate="service_web">تطوير المواقع</h3>
+                <p data-translate="service_web_p">
+                  نبني مواقع ويب متجاوبة وسريعة باستخدام أحدث تقنيات الويب.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="service-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3 data-translate="service_ui">تصميم UI/UX</h3>
+                <p data-translate="service_ui_p">
+                  نصمم واجهات مستخدم جذابة وسهلة الاستخدام تحقق أفضل تجربة.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="service-card">
+                <i class="fas fa-cloud"></i>
+                <h3 data-translate="service_cloud">الحلول السحابية</h3>
+                <p data-translate="service_cloud_p">
+                  نوفر حلول سحابية متطورة لتخزين وإدارة بياناتك بأمان.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3 data-translate="service_data">تحليل البيانات</h3>
+                <p data-translate="service_data_p">
+                  نساعدك في تحليل بياناتك واستخراج رؤى قيمة لنمو عملك.
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+              <div class="service-card">
+                <i class="fas fa-shield-alt"></i>
+                <h3 data-translate="service_security">الأمن السيبراني</h3>
+                <p data-translate="service_security_p">
+                  نحمي أنظمتك وبياناتك من التهديدات السيبرانية.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section class="portfolio-section" id="portfolio">
+        <div class="container">
+          <div class="section-title">
+            <div class="star-img"></div>
+            <span data-translate="portfolio_title">أعمالنا</span>
+          </div>
+
+          <p
+            class="section-subtitle text-center"
+            data-translate="portfolio_sub"
+          >
+            تعرف على بعض المشاريع التي نفذناها
+          </p>
+
+          <div class="portfolio-filters-wrapper">
+            <div class="portfolio-filters">
+              <button
+                class="filter-btn active"
+                data-filter="all"
+                data-translate="filter_all"
+              >
+                الكل
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="graphic-design"
+                data-translate="filter_graphic"
+              >
+                التصميم الجرافيكي
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="web-dev"
+                data-translate="filter_web"
+              >
+                برمجة المواقع
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="app-dev"
+                data-translate="filter_app"
+              >
+                برمجة التطبيقات
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="digital-marketing"
+                data-translate="filter_marketing"
+              >
+                التسويق الرقمي
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="social-media"
+                data-translate="filter_social"
+              >
+                إدارة الصفحات
+              </button>
+              <button
+                class="filter-btn"
+                data-filter="video-production"
+                data-translate="filter_video"
+              >
+                الإنتاج المرئي
+              </button>
+            </div>
+          </div>
+
+          <div class="portfolio-grid">
+            <div class="portfolio-card" data-category="app-dev">
+              <img
+                src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400"
+                alt="Project"
+                class="portfolio-img"
+              />
+              <div class="portfolio-content">
+                <h4 data-translate="proj_pm_title">تطبيق إدارة المشاريع</h4>
+                <p data-translate="proj_pm_desc">
+                  تطبيق شامل لإدارة المشاريع والفرق
+                </p>
+                <div class="portfolio-tags">
+                  <span class="portfolio-tag">React Native</span>
+                  <span class="portfolio-tag">Node.js</span>
+                  <span class="portfolio-tag">MongoDB</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="web-dev">
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400"
+                alt="Project"
+                class="portfolio-img"
+              />
+              <div class="portfolio-content">
+                <h4 data-translate="proj_ecom_title">
+                  منصة التجارة الإلكترونية
+                </h4>
+                <p data-translate="proj_ecom_desc">
+                  متجر إلكتروني متكامل بميزات متقدمة
+                </p>
+                <div class="portfolio-tags">
+                  <span class="portfolio-tag">Vue.js</span>
+                  <span class="portfolio-tag">Laravel</span>
+                  <span class="portfolio-tag">MySQL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="web-dev">
+              <img
+                src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400"
+                alt="Project"
+                class="portfolio-img"
+              />
+              <div class="portfolio-content">
+                <h4 data-translate="proj_cms_title">نظام إدارة المحتوى</h4>
+                <p data-translate="proj_cms_desc">
+                  نظام CMS مخصص للمؤسسات الكبيرة
+                </p>
+                <div class="portfolio-tags">
+                  <span class="portfolio-tag">Angular</span>
+                  <span class="portfolio-tag">Python</span>
+                  <span class="portfolio-tag">PostgreSQL</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="graphic-design">
+              <img
+                src="https://images.unsplash.com/photo-1626785774573-4b799315345d?w=400"
+                alt="Project"
+                class="portfolio-img"
+              />
+              <div class="portfolio-content">
+                <h4 data-translate="proj_brand_title">هوية بصرية متكاملة</h4>
+                <p data-translate="proj_brand_desc">
+                  تصميم شعار وهوية بصرية لشركة ناشئة
+                </p>
+                <div class="portfolio-tags">
+                  <span class="portfolio-tag">Illustrator</span>
+                  <span class="portfolio-tag">Photoshop</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="digital-marketing">
+              <img
+                src="images/Digital advertising.jpg"
+                alt="Project"
+                class="portfolio-img"
+              />
+              <div class="portfolio-content">
+                <h4 data-translate="proj_ad_title">حملة إعلانية رقمية</h4>
+                <p data-translate="proj_ad_desc">
+                  حملة تسويقية متكاملة على منصات التواصل
+                </p>
+                <div class="portfolio-tags">
+                  <span class="portfolio-tag">Google Ads</span>
+                  <span class="portfolio-tag">Facebook Ads</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-card" data-category="social-media">
+              <img
+                src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400"
+                alt="Project"
+                class="portfolio-img"
+              />
+
+              <div class="portfolio-content">
+                <h4 data-translate="proj_social_title">إدارة حسابات التواصل</h4>
+                <p data-translate="proj_social_desc">
+                  إدارة كاملة لحسابات شركة على وسائل التواصل
+                </p>
+
+                <div class="portfolio-tags">
+                  <span class="portfolio-tag" data-translate="proj_social_tag1"
+                    >Content Creation</span
+                  >
+                  <span class="portfolio-tag" data-translate="proj_social_tag2"
+                    >Analytics</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- more cards kept as in original... -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials Section -->
+      <section class="testimonials-section" id="testimonials">
+        <div class="container">
+          <div class="section-title">
+            <div class="star-img"></div>
+            <span data-translate="testimonials_title">ماذا يقول عملاؤنا</span>
+          </div>
+          <p
+            class="section-subtitle text-center"
+            data-translate="testimonials_subtitle"
+          >
+            آراء عملائنا الكرام
+          </p>
+
+          <!-- Swiper -->
+          <div class="swiper mySwiper-testimonials">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p
+                    class="testimonial-text"
+                    data-translate="testimonial1_text"
+                  >
+                    تجربة رائعة من البداية للنهاية، احترافية في التعامل وجودة في
+                    التنفيذ تفوقت على توقعاتنا.
+                  </p>
+                  <div class="client-info">
+                    <div class="client-avatar">
+                      <img src="images/arab-avatar.png" alt="" />
+                    </div>
+                    <div class="client-details">
+                      <h5 data-translate="testimonial1_name">
+                        فهد بن عبدالله القحطاني
+                      </h5>
+                      <p data-translate="testimonial1_role">
+                        المدير التنفيذي – شركة الركن الذهبي للتقنية
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p
+                    class="testimonial-text"
+                    data-translate="testimonial2_text"
+                  >
+                    فريق متعاون وملتزم بالمواعيد، قدّم لنا مشروعًا متكاملًا
+                    بأفضل جودة ممكنة وبأسلوب عمل مريح.
+                  </p>
+                  <div class="client-info women">
+                    <div class="client-avatar">
+                      <img src="images/women-avtar.png" alt="" />
+                    </div>
+                    <div class="client-details">
+                      <h5 data-translate="testimonial2_name">
+                        ريم بنت ناصر العتيبي
+                      </h5>
+                      <p data-translate="testimonial2_role">مديرة مشروع</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p
+                    class="testimonial-text"
+                    data-translate="testimonial3_text"
+                  >
+                    خدمة ممتازة ودعم فني متواصل حتى بعد التسليم. شكراً لكم.
+                  </p>
+                  <div class="client-info">
+                    <div class="client-avatar">
+                      <img src="images/arab-avatar.png" alt="" />
+                    </div>
+                    <div class="client-details">
+                      <h5 data-translate="testimonial3_name">خالد يوسف</h5>
+                      <p data-translate="testimonial3_role">رائد أعمال</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p
+                    class="testimonial-text"
+                    data-translate="testimonial4_text"
+                  >
+                    سرعة في الإنجاز وإتقان في العمل، أنصح بالتعامل معهم لكل من
+                    يبحث عن نتائج مضمونة.
+                  </p>
+                  <div class="client-info">
+                    <div class="client-avatar">
+                      <img src="images/arab-avatar.png" alt="" />
+                    </div>
+                    <div class="client-details">
+                      <h5 data-translate="testimonial4_name">
+                        خالد بن فهد الدوسري
+                      </h5>
+                      <p data-translate="testimonial4_role">
+                        رئيس قسم التقنية – شركة السنام للحلول الرقمية
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide">
+                <div class="testimonial-card">
+                  <div class="stars">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                  </div>
+                  <p
+                    class="testimonial-text"
+                    data-translate="testimonial5_text"
+                  >
+                    حلول عملية وأفكار إبداعية ساعدتنا على تطوير مشروعنا وتقديمه
+                    للجمهور بأفضل صورة.
+                  </p>
+                  <div class="client-info women">
+                    <div class="client-avatar">
+                      <img src="images/women-avtar.png" alt="" />
+                    </div>
+                    <div class="client-details">
+                      <h5 data-translate="testimonial5_name">
+                        رانيا خضر الزبن
+                      </h5>
+                      <p data-translate="testimonial5_role">
+                        شريكة مؤسسة – شركة سما الرقمية
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Blog Section -->
+      <section class="blog-section" id="blog">
+        <div class="container">
+          <div class="section-title">
+            <div class="star-img"></div>
+            <span data-translate="blog_title">المدونة</span>
+          </div>
+
+          <p class="section-subtitle text-center" data-translate="blog_sub">
+            أحدث المقالات والأخبار التقنية
+          </p>
+
+          <div class="row g-4">
+            <!-- Blog 1 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="blog-card">
+                <img
+                  src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=400"
+                  alt="Blog"
+                  class="blog-img"
+                />
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span
+                      ><i class="far fa-calendar"></i>
+                      <span data-translate="blog1_date"
+                        >15 نوفمبر 2024</span
+                      ></span
+                    >
+                    <span
+                      ><i class="far fa-user"></i>
+                      <span data-translate="blog1_author">أحمد محمد</span></span
+                    >
+                  </div>
+                  <h3 class="blog-title" data-translate="blog1_title">
+                    مستقبل الذكاء الاصطناعي في التطبيقات
+                  </h3>
+                  <p class="blog-excerpt" data-translate="blog1_excerpt">
+                    كيف سيغير الذكاء الاصطناعي طريقة تطوير التطبيقات في السنوات
+                    القادمة، وما هي التقنيات الجديدة...
+                  </p>
+                  <a href="#" class="read-more"
+                    ><span data-translate="read_more">اقرأ المزيد</span>
+                    <i class="fas fa-arrow-left"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog 2 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="blog-card">
+                <img
+                  src="https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400"
+                  alt="Blog"
+                  class="blog-img"
+                />
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span
+                      ><i class="far fa-calendar"></i>
+                      <span data-translate="blog2_date"
+                        >10 نوفمبر 2024</span
+                      ></span
+                    >
+                    <span
+                      ><i class="far fa-user"></i>
+                      <span data-translate="blog2_author">سارة علي</span></span
+                    >
+                  </div>
+                  <h3 class="blog-title" data-translate="blog2_title">
+                    أفضل ممارسات تصميم واجهات المستخدم
+                  </h3>
+                  <p class="blog-excerpt" data-translate="blog2_excerpt">
+                    دليل شامل لتصميم واجهات مستخدم جذابة وسهلة الاستخدام تحقق
+                    أفضل تجربة للمستخدمين...
+                  </p>
+                  <a href="#" class="read-more"
+                    ><span data-translate="read_more">اقرأ المزيد</span>
+                    <i class="fas fa-arrow-left"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog 3 -->
+            <div class="col-lg-4 col-md-6">
+              <div class="blog-card">
+                <img
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400"
+                  alt="Blog"
+                  class="blog-img"
+                />
+                <div class="blog-content">
+                  <div class="blog-meta">
+                    <span
+                      ><i class="far fa-calendar"></i>
+                      <span data-translate="blog3_date"
+                        >5 نوفمبر 2024</span
+                      ></span
+                    >
+                    <span
+                      ><i class="far fa-user"></i>
+                      <span data-translate="blog3_author">خالد يوسف</span></span
+                    >
+                  </div>
+                  <h3 class="blog-title" data-translate="blog3_title">
+                    الأمن السيبراني للشركات الناشئة
+                  </h3>
+                  <p class="blog-excerpt" data-translate="blog3_excerpt">
+                    نصائح وإرشادات مهمة لحماية بيانات شركتك الناشئة من التهديدات
+                    السيبرانية المتزايدة...
+                  </p>
+                  <a href="#" class="read-more"
+                    ><span data-translate="read_more">اقرأ المزيد</span>
+                    <i class="fas fa-arrow-left"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="contact-section" id="contact">
+        <div class="container">
+          <div class="section-title">
+            <div class="star-img"></div>
+            <span data-translate="contact_title">تواصل معنا</span>
+          </div>
+
+          <p class="section-subtitle text-center" data-translate="contact_sub">
+            نسعد بالرد على استفساراتك
+          </p>
+
+          <div class="row">
+            <div class="col-lg-5 mb-4">
+              <div class="contact-info">
+                <h3 class="mb-4" data-translate="contact_info">
+                  معلومات التواصل
+                </h3>
+
+                <div class="contact-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <div>
+                    <h5 data-translate="contact_address_title">العنوان</h5>
+                    <p data-translate="contact_address">غزة، فلسطين</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <i class="fas fa-phone"></i>
+                  <div>
+                    <h5 data-translate="contact_phone_title">الهاتف</h5>
+                    <p class="phone-number">+972 59 267 7218</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <i class="fas fa-envelope"></i>
+                  <div>
+                    <h5 data-translate="contact_email_title">
+                      البريد الإلكتروني
+                    </h5>
+                    <p>info@mugcodecompany.com</p>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <i class="fas fa-clock"></i>
+                  <div>
+                    <h5 data-translate="contact_hours_title">ساعات العمل</h5>
+                    <p data-translate="contact_hours">
+                      الأحد - الخميس: 9:00 ص - 6:00 م
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-7">
+              <div class="contact-info">
+                <h3 class="mb-4" data-translate="contact_send">
+                  أرسل لنا رسالة
+                </h3>
+                <form id="contactForm">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="الاسم الكامل"
+                        data-translate-placeholder="ph_fullname"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="البريد الإلكتروني"
+                        data-translate-placeholder="ph_email"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6">
+                      <input
+                        type="tel"
+                        class="form-control"
+                        placeholder="رقم الهاتف"
+                        data-translate-placeholder="ph_phone"
+                        required
+                      />
+                    </div>
+
+                    <div class="col-md-6">
+                      <input
+                        type="text"
+                        class="form-control"
+                        placeholder="الموضوع"
+                        data-translate-placeholder="ph_subject"
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <textarea
+                    class="form-control"
+                    rows="5"
+                    placeholder="رسالتك"
+                    data-translate-placeholder="ph_message"
+                    required
+                  ></textarea>
+
+                  <button
+                    type="submit"
+                    class="btn btn-primary btn-lg w-100"
+                    data-translate="btn_send"
+                  >
+                    إرسال الرسالة
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <!-- Column 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+              <a
+                class="navbar-brand d-flex align-items-center gap-2"
+                href="#home"
+              >
+                <div class="d-flex flex-column">
+                  <div><span>Mug</span> <span>Code</span></div>
+                  <small class="align-self-end" data-translate="footer_slogan"
+                    >Innovative Solutions</small
+                  >
+                </div>
+                <img src="images/logo-icon.svg" alt="logo" width="50" />
+              </a>
+
+              <p class="mb-3" data-translate="footer_desc">
+                نحن شركة رائدة في مجال تطوير البرمجيات والحلول التقنية المبتكرة.
+                نساعد الشركات على التحول الرقمي وتحقيق أهدافها.
+              </p>
+
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="col-lg-2 col-md-6 mb-4">
+              <h5 class="mb-3" data-translate="footer_company">الشركة</h5>
+              <ul class="footer-links">
+                <li>
+                  <a href="#about" data-translate="footer_about">من نحن</a>
+                </li>
+                <li>
+                  <a href="#services" data-translate="footer_services"
+                    >خدماتنا</a
+                  >
+                </li>
+                <li>
+                  <a href="#portfolio" data-translate="footer_portfolio"
+                    >أعمالنا</a
+                  >
+                </li>
+                <li>
+                  <a href="#contact" data-translate="footer_contact"
+                    >اتصل بنا</a
+                  >
+                </li>
+                <li><a href="#" data-translate="footer_jobs">وظائف</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="col-lg-2 col-md-6 mb-4">
+              <h5 class="mb-3" data-translate="footer_services_title">
+                الخدمات
+              </h5>
+              <ul class="footer-links">
+                <li>
+                  <a href="#" data-translate="footer_service_app"
+                    >تطوير التطبيقات</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-translate="footer_service_web"
+                    >تطوير المواقع</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-translate="footer_service_uiux"
+                    >تصميم UI/UX</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-translate="footer_service_cloud"
+                    >الحلول السحابية</a
+                  >
+                </li>
+                <li>
+                  <a href="#" data-translate="footer_service_security"
+                    >الأمن السيبراني</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="col-lg-2 col-md-6 mb-4">
+              <h5 class="mb-3" data-translate="footer_support">الدعم</h5>
+              <ul class="footer-links">
+                <li><a href="#" data-translate="footer_help">المساعدة</a></li>
+                <li>
+                  <a href="#" data-translate="footer_faq">الأسئلة الشائعة</a>
+                </li>
+                <li>
+                  <a href="#" data-translate="footer_privacy">سياسة الخصوصية</a>
+                </li>
+                <li>
+                  <a href="#" data-translate="footer_terms">الشروط والأحكام</a>
+                </li>
+                <li><a href="#" data-translate="footer_docs">التوثيق</a></li>
+              </ul>
+            </div>
+
+            <!-- Column 5 -->
+            <div class="col-lg-2 col-md-6 mb-4">
+              <h5 class="mb-3" data-translate="footer_follow">تابعنا</h5>
+              <ul class="footer-links">
+                <li><a href="#" data-translate="footer_blog">المدونة</a></li>
+                <li><a href="#" data-translate="footer_news">الأخبار</a></li>
+                <li>
+                  <a href="#" data-translate="footer_events">الفعاليات</a>
+                </li>
+                <li>
+                  <a href="#" data-translate="footer_partners">الشركاء</a>
+                </li>
+                <li>
+                  <a href="#" data-translate="footer_suppliers">الموردين</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="copyright">
+            <p>
+              &copy; 2025 <span style="color: #16d7ba">MUG</span> CODE -
+              <span data-translate="footer_rights">جميع الحقوق محفوظة</span>
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
